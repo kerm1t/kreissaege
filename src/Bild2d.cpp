@@ -34,7 +34,7 @@ extern cnvTyp _cnvtyp;
 	Bildspeicher leeren
 	Parameter: Farbe (0=schwarz, 255=weiss)
 */
-Bild2d::clear(int bg)
+void Bild2d::clear(int bg)
 {
 	unsigned int i;
 
@@ -43,7 +43,7 @@ Bild2d::clear(int bg)
 
 /** Bildspeicher belegen
 */
-Bild2d::init()
+void Bild2d::init()
 {
 	unsigned int i;
 
@@ -180,7 +180,7 @@ void Bild2d::pixelup(int x, int y)
 /**
 	Polarkoordinaten -> in kart. Koordinaten (x,y) konvertieren
 */
-Bild2d::cnv_kartes(Config* conf, float f, Bild* bild)
+void Bild2d::cnv_kartes(Config* conf, float f, Bild* bild)
 {
 	unsigned int i;
 	float alpha;								// Winkel im Bogenmass
@@ -227,7 +227,7 @@ y = (float)this->h-1-y;
 	Polarkoordinaten -> Vektorfeld - Histogramm
 	todo: Balken in x-Richtung 2 Pixel breit
 */
-Bild2d::cnv_histo(Config* conf, float f, Bild *bild)
+void Bild2d::cnv_histo(Config* conf, float f, Bild *bild)
 {
 	int i, j;
 	float y;
@@ -248,7 +248,7 @@ Bild2d::cnv_histo(Config* conf, float f, Bild *bild)
 
 // -------------------------------------------------------------------
 
-Bild2d::write()
+void Bild2d::write()
 {
 	std::stringstream img_name;
 
@@ -264,7 +264,7 @@ Bild2d::write()
 	Bildspeicher in *.pgm-Datei schreiben
 	pgm-Format siehe http://netpbm.sourceforge.net/doc/pgm.html
 */
-Bild2d::write(std::string datei)
+void Bild2d::write(std::string datei)
 {
 	std::ofstream os(datei.c_str());
 
@@ -322,7 +322,7 @@ void Bild2d::toScreen()
 	Intensitäts-Bild einer Sequenz
 	je heller, desto weiter entfernt
 */
-Bild2d::cnv_seq_intensity(Sequenz *sequenz)
+void Bild2d::cnv_seq_intensity(Sequenz *sequenz)
 {
 	int i, j, iBild;
 
@@ -349,14 +349,14 @@ Bild2d::cnv_seq_intensity(Sequenz *sequenz)
 
 /**	cosine-shaded Bild einer Sequenz
 */
-Bild2d::cnv_seq_cosinesh(Sequenz *sequenz)
+void Bild2d::cnv_seq_cosinesh(Sequenz *sequenz)
 {
 
 }
 
 /**	3-D surface Bild einer Sequenz
 */
-Bild2d::cnv_seq_3dsurface(Sequenz *sequenz)
+void Bild2d::cnv_seq_3dsurface(Sequenz *sequenz)
 {
 
 }

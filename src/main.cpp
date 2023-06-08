@@ -240,7 +240,7 @@ void write_ini(Config* conf)
 void linie(int Ax, int Ay, int Bx, int By, short r, short g, short b)
 //void BresLine(int Ax, int Ay, int Bx, int By, unsigned char Color)
 {
-	const BUFSIZE = ptcHEIGHT*ptcWIDTH;
+	const int BUFSIZE = ptcHEIGHT*ptcWIDTH;
 	int buf_pos;
 	//------------------------------------------------------------------------
 	// INITIALIZE THE COMPONENTS OF THE ALGORITHM THAT ARE NOT AFFECTED BY THE
@@ -396,7 +396,7 @@ int init_server_socket()
 
 	// Socket an Port-Nummer binden
 	std::cout << "Socket binden       - ";
-	checkReturn = bind(s_server, (struct sockaddr *) &addrServer, sizeof(addrServer));
+///	checkReturn = bind(s_server, (struct sockaddr *) &addrServer, sizeof(addrServer));
 	if (checkReturn == SOCKET_ERROR)
 	{
 		wsprintf(Puffer, "Fehler: bind() - Error-Code %i", WSAGetLastError());
@@ -577,7 +577,7 @@ void fps_reset(float &fpsmin, float &fpsmax)
 // -----------------------------------------------------------------
 void sigma_ausgeben(Speicher* speicher, Sequenz* sequenz, Config* conf, int sigma_akt) {
 	int i,j;
-	const SIGMA_FACTOR = 3;				// Höhe der Balken * SIGMA_FACTOR
+	const int SIGMA_FACTOR = 3;				// Höhe der Balken * SIGMA_FACTOR
 
 	char s[55];
 

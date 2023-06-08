@@ -47,10 +47,10 @@ public:
 	int seq_filt_typ;			// 0=keiner,1=Gauss,2=Mittel,3=Median
 	int bild_filt_typ;			// 0=keiner,1=Gauss,2=Mittel,3=Median
 
-	init_hintergrund();
-	setze_hintergrund_seq();
-	setze_hintergrund_echtzeit(Bild* bild);
-	hintergrund_logik();
+	void init_hintergrund();
+	void setze_hintergrund_seq();
+	void setze_hintergrund_echtzeit(Bild* bild);
+	void hintergrund_logik();
 
 	Speicher();
 	Speicher(Config* conf, Sequenz* sequenz);	// Sequenz

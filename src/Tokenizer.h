@@ -1,5 +1,5 @@
 
-//Tokenizer.h von http://www.codeproject.com/cpp/stringtok.asp
+// Tokenizer.h von http://www.codeproject.com/cpp/stringtok.asp
 
 #ifndef __TOKENIZER_H__
 #define __TOKENIZER_H__
@@ -14,8 +14,7 @@
 
 using namespace std;
 
-#ifdef brauchen_wir_nicht
-/*
+//#ifdef brauchen_wir_nicht
 //For the case the default is a space.
 //This is the default predicate for the Tokenize() function.
 class CIsSpace : public unary_function<char, bool>
@@ -27,7 +26,8 @@ public:
 inline bool CIsSpace::operator()(char c) const
 {
   //isspace<char> returns true if c is a white-space character (0x09-0x0D or 0x20)
-  return isspace<char>(c);
+//  return isspace<char>(c);
+  return (c==0x20);
 }
 
 //For the case the separator is a comma
@@ -62,8 +62,7 @@ inline bool CIsFromString::operator()(char c) const
   else
     return false;
 }
-*/
-#endif
+//#endif
 
 // Trennungszeichen = Semikolon
 class CIsSemicolon : public unary_function<char, bool>

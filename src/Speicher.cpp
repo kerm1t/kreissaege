@@ -17,7 +17,7 @@ extern int bild_filter_typ;
 // Konstruktion/Destruktion
 //////////////////////////////////////////////////////////////////////
 
-Speicher::init_hintergrund()
+void Speicher::init_hintergrund()
 {
 	int i;
 	int size = this->bild->data.size();
@@ -37,7 +37,7 @@ Speicher::init_hintergrund()
 	Datei-Modus => den Hintergrund berechnen durch Mittelung von 10 Bildern,
 	diese aus der Sequenz auslesen
 	=================================== */
-Speicher::setze_hintergrund_seq()
+void Speicher::setze_hintergrund_seq()
 {
 	int i,j;
 	int size = this->bild->data.size();
@@ -73,7 +73,7 @@ Speicher::setze_hintergrund_seq()
 	Socket (Echtzeit)-Modus => den Hintergrund berechnen durch Mittelung von 10 Bildern,
 	dafür Bilder einlesen und warten, bis das 10 Bild hereingekommen ist
 	=================================== */
-Speicher::setze_hintergrund_echtzeit(Bild* bild)
+void Speicher::setze_hintergrund_echtzeit(Bild* bild)
 {
 	int i;
 	int size = this->bild->data.size();
@@ -99,7 +99,7 @@ Speicher::setze_hintergrund_echtzeit(Bild* bild)
 /**	===================================
 	Berechnen des "mathmatischen" Hintergrunds als eine Gerade, mittels Hough-Trafo.
 	=================================== */
-Speicher::hintergrund_logik()
+void Speicher::hintergrund_logik(void)
 {
 	int i = hintergrund_abziehen;
 	

@@ -51,8 +51,8 @@ public:
 	
 	void pixelup(int x, int y);
 
-	write();
-	write(std::string datei);
+  void write();
+  void write(std::string datei);
 	void toScreen();
 
 	void hough(int t);
@@ -63,15 +63,15 @@ public:
 	void linie(int _alpha, int r, int col);
 
 private:
-	init();
-	clear(int bg);
+	void init();
+  void clear(int bg);
 	// Bild
-	cnv_histo(Config* conf, float f, Bild* bild);
-	cnv_kartes(Config* conf, float f, Bild* bild);
+  void cnv_histo(Config* conf, float f, Bild* bild);
+  void cnv_kartes(Config* conf, float f, Bild* bild);
 	// Sequenz
-	cnv_seq_3dsurface(Sequenz* sequenz);
-	cnv_seq_cosinesh(Sequenz* sequenz);
-	cnv_seq_intensity(Sequenz* sequenz);
+  void cnv_seq_3dsurface(Sequenz* sequenz);
+  void cnv_seq_cosinesh(Sequenz* sequenz);
+  void cnv_seq_intensity(Sequenz* sequenz);
 
 	void filter_gauss();
 };
