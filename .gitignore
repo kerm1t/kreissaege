@@ -1,0 +1,7 @@
+[Bb]uild/*
+[Dd]ebug/*
+[Rr]elease/*
+bak/*
+
+# prv
+devlog.rtf
