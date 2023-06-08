@@ -973,7 +973,9 @@ int main(int argc, char* argv[]) {
 	float xx,yy;
 //	float x,y;
 
-	float fps, fpsmin, fpsmax;
+  float fps = 0.0f;
+  float fpsmin = 0.0f;
+  float fpsmax = 0.0f;
 	DWORD timer;
 
 	// Variablen für Socket-Eingabe
@@ -1011,7 +1013,7 @@ int main(int argc, char* argv[]) {
 		selectTimeout.tv_usec = 1;
 
 		// Server-Socket bereitstellen
-		init_server_socket();
+///		init_server_socket();
 
 		bild->aufloesung = ini_aufloesung;
 		bild->stopwinkel = ini_stopwinkel/100;
@@ -1030,16 +1032,17 @@ int main(int argc, char* argv[]) {
 		// -------------------------------------
 		speicher = new Speicher(conf,bild);		// neuer Speicher vom Typ 0=Sequenz
 	}
+  bildquelle = QU_DATEI; // hack ;-)
 	if (bildquelle == QU_DATEI) {
 		// -----------------------------
 		//  Dateiname per Kommandozeile
 		// -----------------------------
 		if (argc > 1) pfad_datei = argv[1];
 		else {
-//			pfad_datei = "messungen -2-\\_030cm_offen_lmsdata.txt";
+			pfad_datei = "..\\data\\_030cm_offen_lmsdata.txt";
 //			pfad_datei = "messungen -3-\\_ws_lmsdata(holz02t,03t).txt";
 //			pfad_datei = "messungen -3-\\__25_lmsdata.txt";
-			pfad_datei = "messungen -3-\\_025_ws_lmsdata(alu+brett+hand).txt";
+//			pfad_datei = "..\\data\\_025_ws_lmsdata(alu+brett+hand).txt";
 //			pfad_datei = "messungen -3-\\__saegen+rausschieben_lmsdata.txt";
 		}
 

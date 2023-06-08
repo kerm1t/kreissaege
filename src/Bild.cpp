@@ -1781,6 +1781,7 @@ void stree_ausgeben(Config* conf, Bild2d* bb, int i_typ, int vtree_li, int vtree
 	int wi_na, wi_wa, lae;
 	int xx,yy;
 
+  i_col = PUNKT_GELB;//hack
 	if (i_typ == 0) i_col = PUNKT_GELB;	// weiss nicht
 	if (i_typ == 1) i_col = PUNKT_BLAU;	// Holz
 	if (i_typ == 2) i_col = PUNKT_ROT;	// Hand
@@ -2276,13 +2277,14 @@ void Bild::strip_tree(Config *conf, Bild* hintergrund)
 					// ----------------
 					punkt_li = v_stree[j].i_left;
 					vtree_li = j;
-					while (v_stree[j].winkel_waage<167.0f && j<v_stree.size()) j++;
-					punkt_re = v_stree[j-1].i_right;
+///					while (v_stree[j].winkel_waage<167.0f && j<v_stree.size()) j++;
+          j++; // hack, TMP!
+///					punkt_re = v_stree[j-1].i_right;
 					vtree_re = j;
 
-					i_stree_typ = neues_objekt_stree(conf,V,punkt_li,punkt_re,
-						vtree_li,vtree_re,i_stree_typ,st_rekursion,proz_wawi);
-					stree_ausgeben(conf,bb,i_stree_typ,vtree_li,vtree_re);
+///					i_stree_typ = neues_objekt_stree(conf,V,punkt_li,punkt_re,
+///						vtree_li,vtree_re,i_stree_typ,st_rekursion,proz_wawi);
+///					stree_ausgeben(conf,bb,i_stree_typ,vtree_li,vtree_re);
 
 					if (j==v_stree.size()) continue;
 				}
