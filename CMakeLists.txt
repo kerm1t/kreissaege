@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 # "../" --> output directory relative same to running in IDE
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../)
@@ -11,8 +11,9 @@ project(lid2d_shaperec)
 
 include_directories(./src ./lib ./lib/tinyptc ./lib/tnt ./lib/wmagic)
 
-link_directories()
+link_directories(./lib ./libTtinyptc ./lib/tnt ./lib/wmagic)
 
+#add_library(wild_magic)
 
 add_executable (${CMAKE_PROJECT_NAME}
 ./src/main.cpp
@@ -32,6 +33,32 @@ add_executable (${CMAKE_PROJECT_NAME}
 ./src/text.cpp
 ./src/text.h
 ./src/tokenizer.h
+./lib/wmagic/WmlBox2.cpp
+./lib/wmagic/WmlContMinBox2.cpp
+./lib/wmagic/WmlMath.cpp
+./lib/wmagic/WmlSystem.cpp
+./lib/wmagic/WmlVector2.cpp
+./lib/wmagic/WmlWinSystem.cpp
+./lib/wmagic/_WmlDistVec2Lin2.cpp
+./lib/wmagic/_WmlLine2.cpp
+./lib/wmagic/_WmlRay2.cpp
+./lib/wmagic/_WmlSegment2.cpp
 )
+
+#CMAKE 3.1
+#target_sources (wild_magic
+#PUBLIC
+#./lib/wmagic/WmlBox2.cpp
+#./lib/wmagic/WmlContMinBox2.cpp
+#./lib/wmagic/WmlMath.cpp
+#./lib/wmagic/WmlSystem.cpp
+#./lib/wmagic/WmlVector2.cpp
+#./lib/wmagic/WmlWinSystem.cpp
+#./lib/wmagic/_WmlDistVec2Lin2.cpp
+#./lib/wmagic/_WmlLine2.cpp
+#./lib/wmagic/_WmlRay2.cpp
+#./lib/wmagic/_WmlSegment2.cpp
+#./lib/wmagic/__WmlAxisAlignedBox2.cpp
+#)
 
 target_link_libraries (${CMAKE_PROJECT_NAME})
