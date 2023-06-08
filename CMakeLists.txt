@@ -5,7 +5,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../)
 
 set (CMAKE_GENERATOR_PLATFORM "x64")
 
-project(lid2d_shaperec)
+project(kreissaege)
 
 #find_package(OpenGL REQUIRED)
 
